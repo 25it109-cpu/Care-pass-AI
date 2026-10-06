@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#070b14] text-slate-100 font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom Glassmorphism & Glow Styles */
+.bg-radial-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.15) 0%, rgba(7, 11, 20, 0) 70%);
+}
+
+.shadow-glass {
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* Print Styles for Doctor-Ready Clinical Handoff */
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+
+  header, footer, nav, button, .no-print {
+    display: none !important;
+  }
+
+  .doctor-summary-printable {
+    background: white !important;
+    color: black !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: none !important;
+  }
+
+  .doctor-summary-printable * {
+    color: black !important;
+    text-shadow: none !important;
+  }
+}
